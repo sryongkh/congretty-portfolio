@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- my css -->
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Todo List by Sirinya</title>
+  </head>
+  <body>
+    <div id="todolist-contents-area">
+      <div id="header">
+        <p>TODO</p>
+        <img
+          id="light-mode-toggle"
+          src="./images/icon-sun.svg"
+          alt="Dark and Light Mode"
+        />
+      </div>
+
+      <div id="todo-input-area">
+        <div id="round-container">
+          <div id="round"><div id="circle-before"></div></div>
+        </div>
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Create a new to do..."
+        />
+      </div>
+      <div id="todo-area">
+        <div id="todo-list"></div>
+
+        <div id="todo-footer">
+          <div id="item-left"><span id="item-counter">0</span> Items Left</div>
+          <div id="item-center">
+            <ul id="menu-filter">
+              <li>
+                <a href="#" class="active" data-filter="all">All</a>
+              </li>
+              <li>
+                <a href="#" data-filter="active">Active</a>
+              </li>
+              <li>
+                <a href="#" data-filter="completed">Completed</a>
+              </li>
+            </ul>
+          </div>
+          <div id="item-right">
+            <a id="clear-completed-btn">Clear Completed</a>
+          </div>
+        </div>
+      </div>
+      <div id="item-center-mobile">
+        <ul id="menu-filter">
+          <li>
+            <a href="#" class="active" data-filter="all">All</a>
+          </li>
+          <li>
+            <a href="#" data-filter="active">Active</a>
+          </li>
+          <li>
+            <a href="#" data-filter="completed">Completed</a>
+          </li>
+        </ul>
+      </div>
+      <p id="message">Drag and drop to reorder list</p>
+    </div>
+
+    <!-- Import JavaScript file -->
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

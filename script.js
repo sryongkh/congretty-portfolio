@@ -37,96 +37,45 @@ document.addEventListener("DOMContentLoaded", function () {
         .scrollIntoView({ behavior: "smooth" });
     });
 
-  const buttons = document.querySelectorAll(".circle-button");
-  const btnProfile = document.getElementById(".circle-button");
+  // Navigation
+  document.getElementById("slide1").addEventListener("change", function () {
+    if (this.checked) {
+      document
+        .getElementById("text-running")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const section = button.dataset.section;
-      const topicElement = document.getElementById("topic");
-      const detailInformation = document.getElementById("description");
+  document.getElementById("slide2").addEventListener("change", function () {
+    if (this.checked) {
+      document
+        .getElementById("section-profile")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
-      switch (section) {
-        case "profile":
-          gsap.fromTo(
-            topicElement,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "PROFILE" },
-            }
-          );
-          gsap.fromTo(
-            detailInformation,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "Sirinya Ongkhamhaeng" },
-            }
-          );
-          break;
-        case "project":
-          gsap.fromTo(
-            topicElement,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "EXPERIENCE" },
-            }
-          );
-          gsap.fromTo(
-            detailInformation,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "" },
-            }
-          );
-          break;
-        case "artwork":
-          gsap.fromTo(
-            topicElement,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "PROJECT" },
-            }
-          );
-          gsap.fromTo(
-            detailInformation,
-            { opacity: 0, y: -40 },
-            {
-              duration: 1,
-              opacity: 1,
-              y: 0,
-              text: { value: "" },
-            }
-          );
-          break;
-        default:
-          gsap.fromTo(
-            nameElement,
-            { opacity: 0, y: -20 },
-            {
-              duration: 0.5,
-              opacity: 1,
-              y: 0,
-              text: { value: "SIRINYA ONGKHAMHAENG" },
-            }
-          );
-          break;
-      }
-    });
+  document.getElementById("slide3").addEventListener("change", function () {
+    if (this.checked) {
+      document
+        .getElementById("section-gallery")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  document.getElementById("slide4").addEventListener("change", function () {
+    if (this.checked) {
+      document
+        .getElementById("section-projects")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  document.getElementById("slide5").addEventListener("change", function () {
+    if (this.checked) {
+      document
+        .getElementById("section-social")
+        .scrollIntoView({ behavior: "smooth" });
+    }
   });
 
   // background animation
@@ -207,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.utils.toArray("#square-profile").forEach(function (element) {
     ScrollTrigger.create({
       trigger: element,
+      markers: true,
       start: "top 100%",
       end: "bottom 20%",
       onEnter: function () {
@@ -571,5 +521,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  const qoute = document.getElementById("quotes-text");
+  const author = document.getElementById("quotes-author");
+  const category = ["happiness", "inspirational", "intelligence", "art"];
+  const randomIndex = Math.floor(Math.random() * category.length);
+  const randomCategory = category[randomIndex];
+  console.log(randomCategory, typeof category);
+
+  $.ajax({
+    method: "GET",
+    url: "https://api.api-ninjas.com/v1/quotes?category=" + randomCategory,
+    headers: { "X-Api-Key": "Wlpt8wvNApZ9pWEajbPM+w==l3oAQBDLuqKXejQ0" },
+    contentType: "application/json",
+    success: function (result) {
+      console.log(result);
+      qoute.innerHTML = "' " + result[0].quote + " '";
+      author.innerHTML = result[0].author;
+    },
+    error: function ajaxError(jqXHR) {
+      console.error("Error: ", jqXHR.responseText);
+    },
+  });
+
   // Gallery
+
+  //Quotes
 });

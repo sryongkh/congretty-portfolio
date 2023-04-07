@@ -53,14 +53,29 @@
     <title>★ P O R T F O L I O ★</title>
   </head>
   <body>
+    <div class="container-navigate">
+      <form>
+        <input
+          type="radio"
+          id="slide1"
+          name="slider"
+          title="Hi There!"
+          checked="checked"
+        />
+        <input type="radio" id="slide2" name="slider" title="Profile" />
+        <input type="radio" id="slide3" name="slider" title="Artworks" />
+        <input type="radio" id="slide4" name="slider" title="Projects" />
+        <input type="radio" id="slide5" name="slider" title="Socials" />
+      </form>
+    </div>
     <div id="background"></div>
+    <div id="loading">
+      <h1>Hi There!</h1>
+      <p>Loading...</p>
+      <p id="loading-text">0%</p>
+    </div>
+
     <div id="frame">
-      
-      <div id="loading">
-        <h1>Hi There!</h1>
-        <p>Loading...</p>
-        <p id="loading-text">0%</p>
-      </div>
       <div id="star-container"></div>
       <div id="square">
         <div class="console-container">
@@ -78,7 +93,9 @@
             <button class="button-arounder">SOCIAL</button>
           </div>
           <div id="btn-download">
-            <button id="button-arounder-download" class="button-arounder">DOWNLOAD</button>
+            <button id="button-arounder-download" class="button-arounder">
+              DOWNLOAD
+            </button>
             <div id="dropdown-content">
               <a id="tni-proceeding" class="dropdown-item">Proceeding</a>
               <a id="resume" class="dropdown-item">Resume</a>
@@ -86,7 +103,7 @@
             </div>
           </div>
         </div>
-        
+
         <figure id="circle"></figure>
         <div id="stars"></div>
         <div id="background-moon">
@@ -189,39 +206,13 @@
           </svg>
         </div>
       </div>
+      <div id="quotes">
+        <h1></h1>
+        <p id="quotes-text"></p>
+        <p id="quotes-author"></p>
+      </div>
 
-      <section id="section-gallery">
-        <logo-slider>
-          <div>
-            <img src="assets/img/draw_1.PNG" />
-            <img src="assets/img/draw_2.PNG" />
-            <img src="assets/img/draw_3.PNG" />
-            <img src="assets/img/draw_4.PNG" />
-            <img src="assets/img/draw_5.PNG" />
-            <img src="assets/img/draw_6.PNG" />
-            <img src="assets/img/draw_7.PNG" />
-            <img src="assets/img/draw_8.PNG" />
-            <img src="assets/img/draw_9.PNG" />
-            <img src="assets/img/draw_10.PNG" />
-           </div>
-          
-          <div>
-            <img src="assets/img/draw_1.PNG" />
-            <img src="assets/img/draw_2.PNG" />
-            <img src="assets/img/draw_3.PNG" />
-            <img src="assets/img/draw_4.PNG" />
-            <img src="assets/img/draw_5.PNG" />
-            <img src="assets/img/draw_6.PNG" />
-            <img src="assets/img/draw_7.PNG" />
-            <img src="assets/img/draw_8.PNG" />
-            <img src="assets/img/draw_9.PNG" />
-            <img src="assets/img/draw_10.PNG" />
-          </div>
-        </logo-slider>
-        
-      </section>
-
-      <section id="section-profile">
+      <section id="section-profile" for="Slide2">
         <div id="myInformation">
           <div id="myInformation-section-1">
             <h1>Hi there, I'm Sirinya Ongkhamhaeng.</h1>
@@ -345,9 +336,79 @@
         </div>
       </section>
 
+      <section id="section-gallery">
+        <h1>Digital Artworks</h1>
+        <gallery-slider>
+          <div>
+            <img src="assets/img/draw_1.PNG" />
+            <img src="assets/img/draw_2.PNG" />
+            <img src="assets/img/draw_3.PNG" />
+            <img src="assets/img/draw_4.PNG" />
+            <img src="assets/img/draw_5.PNG" />
+            <img src="assets/img/draw_6.PNG" />
+            <img src="assets/img/draw_7.PNG" />
+            <img src="assets/img/draw_8.PNG" />
+            <img src="assets/img/draw_9.PNG" />
+            <img src="assets/img/draw_10.PNG" />
+          </div>
+          <div>
+            <img src="assets/img/draw_1.PNG" />
+            <img src="assets/img/draw_2.PNG" />
+            <img src="assets/img/draw_3.PNG" />
+            <img src="assets/img/draw_4.PNG" />
+            <img src="assets/img/draw_5.PNG" />
+            <img src="assets/img/draw_6.PNG" />
+            <img src="assets/img/draw_7.PNG" />
+            <img src="assets/img/draw_8.PNG" />
+            <img src="assets/img/draw_9.PNG" />
+            <img src="assets/img/draw_10.PNG" />
+          </div>
+        </gallery-slider>
+        <div id="box-see-art">
+          <button id="btn-see-art">
+            <a href="../gallery/gallery.html" target="_blank">
+              Explore This Project
+            </a>
+          </button>
+        </div>
+      </section>
+
       <section id="section-projects">
         <h1>Projects</h1>
-        <div id="projects-container">Coming Soon...</div>
+        <div id="projects-container">
+          <div id="project-box">
+            <img src="assets/img/todo-project.jpg" />
+            <div id="project-desc">
+              <h1>Todo List : Frontend Challenge</h1>
+              <h4>HTML5 | CSS-3 | JavaScript</h4>
+              <p>Project about to do list web application.</p>
+              <div id="box-see-project">
+                <button id="btn-see-project">
+                  <a href="../projects/Todolist/project1.html" target="_blank">
+                    Explore This Project
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div id="project-box">
+            <!-- <div id="project-desc">
+              <h1>Coming Soon</h1>
+              <h4></h4>
+              <p>Coming Soon</p>
+              <div id="box-see-project">
+                <button
+                  id="btn-see-project"
+                  onclick="window.location.href='projects/Todolist/project1.html'"
+                >
+                  Explore This Project
+                </button>
+              </div>
+            </div>
+            <img src="" /> -->
+          </div>
+        </div>
       </section>
 
       <section id="section-social">
